@@ -63,4 +63,28 @@ public class RomanNumeralTest {
     assertEquals(5, result);
   }
 
+  @Test
+  public void givenVIreturns6(){
+    //Arrange
+    RomanNumeral rom = new RomanNumeral();
+
+    //Act
+    int result = rom.convertNumeralToInt("VI");
+
+    //Assert
+    assertEquals(6, result);
+  }
+
+  @Test
+  public void givenVIIreturns7(){
+    //Arrange
+    RomanNumeral rom = new RomanNumeral();
+
+    //Act
+    int result = rom.convertNumeralToInt("VII");
+
+    //Assert
+    assertEquals(7, result);
+  }
+
 }
