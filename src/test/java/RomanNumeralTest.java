@@ -1,12 +1,19 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 public class RomanNumeralTest {
+
+  RomanNumeral rom;
+
+  @Before
+  public void setup() {
+      rom = new RomanNumeral();
+  }
 
   @Test
   public void givenIreturns1(){
     //Arrange
-    RomanNumeral rom = new RomanNumeral();
 
     //Act
     int result = rom.convertNumeralToInt("I");
@@ -18,7 +25,6 @@ public class RomanNumeralTest {
   @Test
   public void givenIIreturns2(){
     //Arrange
-    RomanNumeral rom = new RomanNumeral();
 
     //Act
     int result = rom.convertNumeralToInt("II");
@@ -30,7 +36,6 @@ public class RomanNumeralTest {
   @Test
   public void givenIIIreturns3(){
     //Arrange
-    RomanNumeral rom = new RomanNumeral();
 
     //Act
     int result = rom.convertNumeralToInt("III");
@@ -42,7 +47,6 @@ public class RomanNumeralTest {
   @Test
   public void givenIVreturns4(){
     //Arrange
-    RomanNumeral rom = new RomanNumeral();
 
     //Act
     int result = rom.convertNumeralToInt("IV");
@@ -54,7 +58,6 @@ public class RomanNumeralTest {
   @Test
   public void givenVreturns5(){
     //Arrange
-    RomanNumeral rom = new RomanNumeral();
 
     //Act
     int result = rom.convertNumeralToInt("V");
@@ -66,7 +69,6 @@ public class RomanNumeralTest {
   @Test
   public void givenVIreturns6(){
     //Arrange
-    RomanNumeral rom = new RomanNumeral();
 
     //Act
     int result = rom.convertNumeralToInt("VI");
@@ -78,7 +80,6 @@ public class RomanNumeralTest {
   @Test
   public void givenVIIreturns7(){
     //Arrange
-    RomanNumeral rom = new RomanNumeral();
 
     //Act
     int result = rom.convertNumeralToInt("VII");
@@ -90,7 +91,6 @@ public class RomanNumeralTest {
   @Test
   public void givenIXreturns9(){
     //Arrange
-    RomanNumeral rom = new RomanNumeral();
 
     //Act
     int result = rom.convertNumeralToInt("IX");
@@ -102,7 +102,6 @@ public class RomanNumeralTest {
   @Test
   public void givenXreturns10(){
     //Arrange
-    RomanNumeral rom = new RomanNumeral();
 
     //Act
     int result = rom.convertNumeralToInt("X");
@@ -110,5 +109,29 @@ public class RomanNumeralTest {
     //Assert
     assertEquals(10, result);
   }
+
+  @Test
+  public void givenXVreturns15(){
+    //Arrange
+
+    //Act
+    int result = rom.convertNumeralToInt("XV");
+
+    //Assert
+    assertEquals(15, result);
+  }
+
+  @Test
+  public void givenXXreturns20(){
+    //Arrange
+
+    //Act
+    int result = rom.convertNumeralToInt("XX");
+
+    //Assert
+    assertEquals(20, result);
+  }
+
+
 
 }
