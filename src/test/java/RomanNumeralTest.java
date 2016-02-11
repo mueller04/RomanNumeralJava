@@ -242,5 +242,16 @@ public class RomanNumeralTest {
     assertEquals(100, result);
   }
 
+  @Test
+  public void givenCDLXXXIVreturns484(){
+    //Arrange
+
+    //Act
+    int result = rom.convertNumeralToInt("CDLXXXIV");
+
+    //Assert
+    assertEquals(484, result);
+  }
+
 
 }
