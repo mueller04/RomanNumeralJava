@@ -253,5 +253,27 @@ public class RomanNumeralTest {
     assertEquals(484, result);
   }
 
+  @Test
+  public void givenCMXCIXreturns999(){
+    //Arrange
+
+    //Act
+    int result = rom.convertNumeralToInt("CMXCIX");
+
+    //Assert
+    assertEquals(999, result);
+  }
+
+  @Test
+  public void givenMreturns1000(){
+    //Arrange
+
+    //Act
+    int result = rom.convertNumeralToInt("M");
+
+    //Assert
+    assertEquals(1000, result);
+  }
+
 
 }

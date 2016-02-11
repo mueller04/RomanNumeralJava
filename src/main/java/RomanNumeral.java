@@ -12,6 +12,7 @@ public class RomanNumeral {
     intToNumeral.put('L', 50);
     intToNumeral.put('C', 100);
     intToNumeral.put('D', 500);
+    intToNumeral.put('M', 1000);
   }
 
   public int convertNumeralToInt(String numeral) {
