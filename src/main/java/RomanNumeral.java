@@ -3,14 +3,14 @@ import java.util.Map;
 
 public class RomanNumeral {
 
-  Map<Integer, Character> intToNumeral = new HashMap<Integer, Character>();
+  Map<Character, Integer> intToNumeral = new HashMap<Character, Integer>();
 
   public RomanNumeral(){
-    intToNumeral.put(1, 'I');
-    intToNumeral.put(5, 'V');
-    intToNumeral.put(10, 'X');
+    intToNumeral.put('I', 1);
+    intToNumeral.put('V', 5);
+    intToNumeral.put('X', 10);
+    intToNumeral.put('L', 30);
   }
-
 
 
   public int convertNumeralToInt(String numeral) {
@@ -21,17 +21,11 @@ public class RomanNumeral {
     int index = 0;
     for (char singleChar : numeralArray ) {
 
-        if (singleChar == intToNumeral.get(1)) {
+        if (singleChar == 'I') {
             result -= subtractForMinus1Results(index, numeralArray);
             result += 1;
-        }
-
-        if (singleChar == intToNumeral.get(5)) {
-            result += 5;
-        }
-
-        if (singleChar == intToNumeral.get(10)){
-            result += 10;
+        } else {
+            result += intToNumeral.get(singleChar);
         }
 
       index++;
@@ -48,8 +42,8 @@ public class RomanNumeral {
 
   public int subtractForMinus1Results(int index, char[] numeralArray) {
     if (index > 0 &&
-        (numeralArray[index - 1] == intToNumeral.get(5) ||
-        numeralArray[index -1] == intToNumeral.get(10))) {
+        (numeralArray[index - 1] == 'V' ||
+        numeralArray[index -1] == 'X')) {
         return 2;
     } else {
         return 0;

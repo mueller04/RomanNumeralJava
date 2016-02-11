@@ -133,7 +133,7 @@ public class RomanNumeralTest {
   }
 
   @Test
-  public void givenXXreturns19(){
+  public void givenXIXreturns19(){
     //Arrange
 
     //Act
@@ -155,7 +155,7 @@ public class RomanNumeralTest {
   }
 
   @Test
-  public void givenXXXIXreturns20(){
+  public void givenXXXIXreturns39(){
     //Arrange
 
     //Act
@@ -163,6 +163,17 @@ public class RomanNumeralTest {
 
     //Assert
     assertEquals(39, result);
+  }
+
+  @Test
+  public void givenXLreturns40(){
+    //Arrange
+
+    //Act
+    int result = rom.convertNumeralToInt("XL");
+
+    //Assert
+    assertEquals(40, result);
   }
 
 
