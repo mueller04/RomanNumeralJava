@@ -1,4 +1,17 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class RomanNumeral {
+
+  Map<Integer, Character> intToNumeral = new HashMap<Integer, Character>();
+
+  public RomanNumeral(){
+    intToNumeral.put(1, 'I');
+    intToNumeral.put(5, 'V');
+    intToNumeral.put(10, 'X');
+  }
+
+
 
   public int convertNumeralToInt(String numeral) {
     char[] numeralArray = convertStringToReversedCharArray(numeral);
@@ -8,16 +21,16 @@ public class RomanNumeral {
     int index = 0;
     for (char singleChar : numeralArray ) {
 
-        if (singleChar == 'I') {
+        if (singleChar == intToNumeral.get(1)) {
             result -= subtractForMinus1Results(index, numeralArray);
             result += 1;
         }
 
-        if (singleChar == 'V') {
+        if (singleChar == intToNumeral.get(5)) {
             result += 5;
         }
 
-        if (singleChar == 'X'){
+        if (singleChar == intToNumeral.get(10)){
             result += 10;
         }
 
@@ -34,8 +47,9 @@ public class RomanNumeral {
   }
 
   public int subtractForMinus1Results(int index, char[] numeralArray) {
-    if (index > 0 && (numeralArray[index - 1] == 'V' ||
-        numeralArray[index -1] == 'X')) {
+    if (index > 0 &&
+        (numeralArray[index - 1] == intToNumeral.get(5) ||
+        numeralArray[index -1] == intToNumeral.get(10))) {
         return 2;
     } else {
         return 0;
