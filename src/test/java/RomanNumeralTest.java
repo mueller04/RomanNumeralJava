@@ -198,5 +198,49 @@ public class RomanNumeralTest {
     assertEquals(50, result);
   }
 
+  @Test
+  public void givenLVIreturns56(){
+    //Arrange
+
+    //Act
+    int result = rom.convertNumeralToInt("LVI");
+
+    //Assert
+    assertEquals(56, result);
+  }
+
+  @Test
+  public void givenXCreturns90(){
+    //Arrange
+
+    //Act
+    int result = rom.convertNumeralToInt("XC");
+
+    //Assert
+    assertEquals(90, result);
+  }
+
+  @Test
+  public void givenXCIVCreturns94(){
+    //Arrange
+
+    //Act
+    int result = rom.convertNumeralToInt("XCIV");
+
+    //Assert
+    assertEquals(94, result);
+  }
+
+  @Test
+  public void givenCreturns100(){
+    //Arrange
+
+    //Act
+    int result = rom.convertNumeralToInt("C");
+
+    //Assert
+    assertEquals(100, result);
+  }
+
 
 }

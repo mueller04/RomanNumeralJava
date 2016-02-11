@@ -10,6 +10,7 @@ public class RomanNumeral {
     intToNumeral.put('V', 5);
     intToNumeral.put('X', 10);
     intToNumeral.put('L', 50);
+    intToNumeral.put('C', 100);
   }
 
   public int convertNumeralToInt(String numeral) {
