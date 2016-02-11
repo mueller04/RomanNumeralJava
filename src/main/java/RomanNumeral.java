@@ -9,7 +9,7 @@ public class RomanNumeral {
     for (char singleChar : numeralArray ) {
 
         if (singleChar == 'I') {
-            result -= subtractForIV(index, numeralArray);
+            result -= subtractForMinus1Results(index, numeralArray);
             result += 1;
         }
 
@@ -33,8 +33,9 @@ public class RomanNumeral {
     return numeral.toCharArray();
   }
 
-  public int subtractForIV(int index, char[] numeralArray) {
-    if (index > 0 && numeralArray[index - 1] == 'V') {
+  public int subtractForMinus1Results(int index, char[] numeralArray) {
+    if (index > 0 && (numeralArray[index - 1] == 'V' ||
+        numeralArray[index -1] == 'X')) {
         return 2;
     } else {
         return 0;

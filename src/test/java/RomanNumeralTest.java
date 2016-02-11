@@ -88,6 +88,18 @@ public class RomanNumeralTest {
   }
 
   @Test
+  public void givenIXreturns9(){
+    //Arrange
+    RomanNumeral rom = new RomanNumeral();
+
+    //Act
+    int result = rom.convertNumeralToInt("IX");
+
+    //Assert
+    assertEquals(9, result);
+  }
+
+  @Test
   public void givenXreturns10(){
     //Arrange
     RomanNumeral rom = new RomanNumeral();
