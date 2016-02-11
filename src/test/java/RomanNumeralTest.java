@@ -176,5 +176,16 @@ public class RomanNumeralTest {
     assertEquals(40, result);
   }
 
+  @Test
+  public void givenXLIVreturns44(){
+    //Arrange
+
+    //Act
+    int result = rom.convertNumeralToInt("XLIV");
+
+    //Assert
+    assertEquals(44, result);
+  }
+
 
 }

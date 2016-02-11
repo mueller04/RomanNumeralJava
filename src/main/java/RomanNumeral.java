@@ -30,7 +30,6 @@ public class RomanNumeral {
 
       index++;
     }
-
       return result;
   }
 
