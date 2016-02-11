@@ -9,9 +9,8 @@ public class RomanNumeral {
     intToNumeral.put('I', 1);
     intToNumeral.put('V', 5);
     intToNumeral.put('X', 10);
-    intToNumeral.put('L', 30);
+    intToNumeral.put('L', 50);
   }
-
 
   public int convertNumeralToInt(String numeral) {
     char[] numeralArray = convertStringToReversedCharArray(numeral);
@@ -21,13 +20,11 @@ public class RomanNumeral {
     int index = 0;
     for (char singleChar : numeralArray ) {
 
-        if (singleChar == 'I') {
-            result -= subtractForMinus1Results(index, numeralArray);
-            result += 1;
+        if (index > 0 && intToNumeral.get(singleChar) < intToNumeral.get((numeralArray[index - 1]))) {
+            result -= intToNumeral.get(singleChar);
         } else {
             result += intToNumeral.get(singleChar);
         }
-
       index++;
     }
       return result;
@@ -38,15 +35,4 @@ public class RomanNumeral {
     numeral = strBuffer.reverse().toString();
     return numeral.toCharArray();
   }
-
-  public int subtractForMinus1Results(int index, char[] numeralArray) {
-    if (index > 0 &&
-        (numeralArray[index - 1] == 'V' ||
-        numeralArray[index -1] == 'X')) {
-        return 2;
-    } else {
-        return 0;
-    }
-  }
-
 }

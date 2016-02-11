@@ -187,5 +187,16 @@ public class RomanNumeralTest {
     assertEquals(44, result);
   }
 
+  @Test
+  public void givenLreturns50(){
+    //Arrange
+
+    //Act
+    int result = rom.convertNumeralToInt("L");
+
+    //Assert
+    assertEquals(50, result);
+  }
+
 
 }
