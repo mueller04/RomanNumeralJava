@@ -1,32 +1,40 @@
 public class RomanNumeral {
 
-public int convertNumeralToInt(String numeral) {
+  public int convertNumeralToInt(String numeral) {
+    char[] numeralArray = convertStringToReversedCharArray(numeral);
 
-  StringBuffer strBuffer = new StringBuffer(numeral);
-  numeral = strBuffer.reverse().toString();
-  char[] numeralArray = numeral.toCharArray();
+    int result = 0;
 
-  int result = 0;
+    int index = 0;
+    for (char singleChar : numeralArray ) {
 
-  int index = 0;
-  for (char singleChar : numeralArray ) {
-      if (singleChar == 'I') {
-          if (index > 0 && numeralArray[index - 1] == 'V') {
-              result -= 2;
-          }
-          result += 1;
-      }
+        if (singleChar == 'I') {
+            result -= subtractForIV(index, numeralArray);
+            result += 1;
+        }
 
-      if (singleChar == 'V') {
+        if (singleChar == 'V') {
+          result += 5;
+        }
 
-        result += 5;
-      }
-    index++;
+      index++;
+    }
+
+      return result;
   }
 
+  public char[] convertStringToReversedCharArray(String numeral) {
+    StringBuffer strBuffer = new StringBuffer(numeral);
+    numeral = strBuffer.reverse().toString();
+    return numeral.toCharArray();
+  }
 
-    return result;
-}
-
+  public int subtractForIV(int index, char[] numeralArray) {
+    if (index > 0 && numeralArray[index - 1] == 'V') {
+        return 2;
+    } else {
+        return 0;
+    }
+  }
 
 }
