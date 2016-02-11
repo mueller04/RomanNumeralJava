@@ -14,7 +14,11 @@ public class RomanNumeral {
         }
 
         if (singleChar == 'V') {
-          result += 5;
+            result += 5;
+        }
+
+        if (singleChar == 'X'){
+            result += 10;
         }
 
       index++;

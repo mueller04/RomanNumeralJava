@@ -87,4 +87,16 @@ public class RomanNumeralTest {
     assertEquals(7, result);
   }
 
+  @Test
+  public void givenXreturns10(){
+    //Arrange
+    RomanNumeral rom = new RomanNumeral();
+
+    //Act
+    int result = rom.convertNumeralToInt("X");
+
+    //Assert
+    assertEquals(10, result);
+  }
+
 }
