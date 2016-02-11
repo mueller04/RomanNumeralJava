@@ -111,6 +111,17 @@ public class RomanNumeralTest {
   }
 
   @Test
+  public void givenXIVreturns14(){
+    //Arrange
+
+    //Act
+    int result = rom.convertNumeralToInt("XIV");
+
+    //Assert
+    assertEquals(14, result);
+  }
+
+  @Test
   public void givenXVreturns15(){
     //Arrange
 
@@ -119,6 +130,17 @@ public class RomanNumeralTest {
 
     //Assert
     assertEquals(15, result);
+  }
+
+  @Test
+  public void givenXXreturns19(){
+    //Arrange
+
+    //Act
+    int result = rom.convertNumeralToInt("XIX");
+
+    //Assert
+    assertEquals(19, result);
   }
 
   @Test
@@ -132,6 +154,16 @@ public class RomanNumeralTest {
     assertEquals(20, result);
   }
 
+  @Test
+  public void givenXXXIXreturns20(){
+    //Arrange
+
+    //Act
+    int result = rom.convertNumeralToInt("XXXIX");
+
+    //Assert
+    assertEquals(39, result);
+  }
 
 
 }
