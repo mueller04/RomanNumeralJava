@@ -22,6 +22,17 @@ public class IntToNumeralTest {
     assertEquals("I", result);
   }
 
+  @Test
+  public void given2returnsII(){
+    //Arrange
+
+    //Act
+    String result = rom.convertIntToNumeral(2);
+
+    //Assert
+    assertEquals("II", result);
+  }
+
 
 
 }
