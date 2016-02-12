@@ -49,10 +49,10 @@ public class IntToNumeralTest {
     //Arrange
 
     //Act
-    //String result = rom.convertIntToNumeral(4);
+    String result = rom.convertIntToNumeral(4);
 
     //Assert
-    //assertEquals("IV", result);
+    assertEquals("IV", result);
   }
 
   @Test
@@ -67,7 +67,7 @@ public class IntToNumeralTest {
   }
 
   @Test
-  public void given6returnsV(){
+  public void given6returnsVI(){
     //Arrange
 
     //Act
