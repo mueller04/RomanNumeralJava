@@ -36,4 +36,13 @@ public class RomanNumeral {
     numeral = strBuffer.reverse().toString();
     return numeral.toCharArray();
   }
+
+  public String convertIntToNumeral(int number) {
+
+    return "I";
+
+  }
+
+
+
 }

@@ -16,7 +16,7 @@ public class IntToNumeralTest {
     //Arrange
 
     //Act
-    int result = rom.convertIntToNumeral(1);
+    String result = rom.convertIntToNumeral(1);
 
     //Assert
     assertEquals("I", result);
