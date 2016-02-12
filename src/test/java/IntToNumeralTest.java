@@ -66,6 +66,17 @@ public class IntToNumeralTest {
     assertEquals("V", result);
   }
 
+  @Test
+  public void given6returnsV(){
+    //Arrange
+
+    //Act
+    String result = rom.convertIntToNumeral(6);
+
+    //Assert
+    assertEquals("VI", result);
+  }
+
 
 
 }
