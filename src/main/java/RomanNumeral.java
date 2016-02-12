@@ -1,18 +1,23 @@
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class RomanNumeral {
 
-  Map<Character, Integer> intToNumeral = new HashMap<Character, Integer>();
+  Map<Character, Integer> numeralToInt = new HashMap<Character, Integer>();
+  Map<Integer, String> intToNumeral = new LinkedHashMap<Integer, String>();
 
   public RomanNumeral(){
-    intToNumeral.put('I', 1);
-    intToNumeral.put('V', 5);
-    intToNumeral.put('X', 10);
-    intToNumeral.put('L', 50);
-    intToNumeral.put('C', 100);
-    intToNumeral.put('D', 500);
-    intToNumeral.put('M', 1000);
+    numeralToInt.put('I', 1);
+    numeralToInt.put('V', 5);
+    numeralToInt.put('X', 10);
+    numeralToInt.put('L', 50);
+    numeralToInt.put('C', 100);
+    numeralToInt.put('D', 500);
+    numeralToInt.put('M', 1000);
+
+    intToNumeral.put(5, "V");
+    intToNumeral.put(1, "I");
   }
 
   public int convertNumeralToInt(String numeral) {
@@ -21,10 +26,10 @@ public class RomanNumeral {
     int index = 0;
     for (char singleChar : numeralArray ) {
 
-        if (index > 0 && intToNumeral.get(singleChar) < intToNumeral.get((numeralArray[index - 1]))) {
-            result -= intToNumeral.get(singleChar);
+        if (index > 0 && numeralToInt.get(singleChar) < numeralToInt.get((numeralArray[index - 1]))) {
+            result -= numeralToInt.get(singleChar);
         } else {
-            result += intToNumeral.get(singleChar);
+            result += numeralToInt.get(singleChar);
         }
       index++;
     }
@@ -40,12 +45,15 @@ public class RomanNumeral {
   public String convertIntToNumeral(int number) {
     String numeral = "";
 
-    for (int i = number; i > 0; i--) {
-        numeral = numeral.concat("I");
+    while (number > 0 ) {
+        for (Map.Entry<Integer, String> entry : intToNumeral.entrySet()) {
+            Integer hashNum = entry.getKey();
+            if (number >= hashNum) {
+                numeral = numeral.concat(intToNumeral.get(hashNum));
+                number -= hashNum;
+            }
+        }
+      }
+      return numeral;
     }
-    return numeral;
   }
-
-
-
-}

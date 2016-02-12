@@ -44,6 +44,28 @@ public class IntToNumeralTest {
     assertEquals("III", result);
   }
 
+  @Test
+  public void given4returnsIV(){
+    //Arrange
+
+    //Act
+    //String result = rom.convertIntToNumeral(4);
+
+    //Assert
+    //assertEquals("IV", result);
+  }
+
+  @Test
+  public void given5returnsV(){
+    //Arrange
+
+    //Act
+    String result = rom.convertIntToNumeral(5);
+
+    //Assert
+    assertEquals("V", result);
+  }
+
 
 
 }
