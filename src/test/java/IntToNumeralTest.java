@@ -33,6 +33,17 @@ public class IntToNumeralTest {
     assertEquals("II", result);
   }
 
+  @Test
+  public void given3returnsIII(){
+    //Arrange
+
+    //Act
+    String result = rom.convertIntToNumeral(3);
+
+    //Assert
+    assertEquals("III", result);
+  }
+
 
 
 }

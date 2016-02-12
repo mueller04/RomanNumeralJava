@@ -38,9 +38,12 @@ public class RomanNumeral {
   }
 
   public String convertIntToNumeral(int number) {
+    String numeral = "";
 
-    return "I";
-
+    for (int i = number; i > 0; i--) {
+        numeral = numeral.concat("I");
+    }
+    return numeral;
   }
 
 
