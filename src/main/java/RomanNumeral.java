@@ -17,9 +17,7 @@ public class RomanNumeral {
 
   public int convertNumeralToInt(String numeral) {
     char[] numeralArray = convertStringToReversedCharArray(numeral);
-
     int result = 0;
-
     int index = 0;
     for (char singleChar : numeralArray ) {
 
